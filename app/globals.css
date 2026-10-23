@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --background: #060913;
+    --surface-container-lowest: #0a0e1c;
+    --surface-container-low: #0f152a;
+    --surface-container: #151c35;
+    --surface-container-high: #1c2543;
+    --surface-container-highest: #242f53;
+    --primary: #34d399; /* Emerald 400 */
+    --primary-container: rgba(16, 185, 129, 0.18);
+    --on-primary-container: #a7f3d0;
+    --secondary: #38bdf8; /* Sky 400 */
+    --tertiary: #a78bfa; /* Violet 400 */
+    --border-hairline: rgba(255, 255, 255, 0.08);
+    --border-elevated: rgba(255, 255, 255, 0.15);
+  }
+
+  body {
+    background-color: var(--background);
+    color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Roboto Flex", "Inter", sans-serif;
+    letter-spacing: -0.012em;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.10) 0px, transparent 45%),
+      radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.09) 0px, transparent 45%),
+      radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.07) 0px, transparent 55%),
+      radial-gradient(at 0% 70%, rgba(20, 184, 166, 0.05) 0px, transparent 40%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* Material Design 2027 by Apple: Frosted Liquid Glass & Tonal Radii */
+.glass-panel {
+  background: rgba(16, 23, 42, 0.68);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 
+    0 12px 32px -4px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.glass-panel-elevated {
+  background: rgba(22, 32, 58, 0.78);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 24px 48px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Material 2027 Interactive Segmented Control & Tonal Pills */
+.mat-segment-track {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35);
+  padding: 4px;
+  border-radius: 9999px;
+}
+
+.mat-segment-item {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #94a3b8;
+}
+
+.mat-segment-item-active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+}
+
+.glass-pill-active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.95), rgba(5, 150, 105, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.40), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Material 2027 Expressive Accent Button */
+.mat-fab-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px -2px rgba(16, 185, 129, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mat-fab-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -2px rgba(16, 185, 129, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.mat-fab-primary:active {
+  transform: translateY(0);
+}
+
+/* Custom Cupertino-style Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.22);
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.42);
+}
+
+/* Cupertino Focus Rings */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.25);
+}

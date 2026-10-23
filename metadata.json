@@ -1,0 +1,6 @@
+{
+  "name": "Engine - Hybrid Athlete OS",
+  "description": "Piattaforma avanzata per atleti ibridi: workout tracking, meal planning, dispensa intelligente, intervals.icu sync, coach AI severo e calcolatori sportivi.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
